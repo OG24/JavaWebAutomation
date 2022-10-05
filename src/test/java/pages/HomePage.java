@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -17,12 +18,30 @@ public class HomePage extends Utilities {
     By interactions = By.xpath("//*[@class='category-cards']//*[text()='Interactions']");
     By bookStoreApplications = By.xpath("//*[@class='category-cards']//*[text()='Book Store Applications']");
 
-    public HomePage click_header(){
-        driver.findElement(header);
+    public HomePage(){
+        checkElements();
+    }
+
+    public void checkElements() {
+        Assert.assertTrue("Header is not displayed!", driver.findElement(header).isDisplayed());
+        Assert.assertTrue("Banner is not displayed!", driver.findElement(banner).isDisplayed());
+        Assert.assertTrue("'Elements' section is not displayed!", driver.findElement(elements).isDisplayed());
+        Assert.assertTrue("'Forms' section is not displayed!", driver.findElement(forms).isDisplayed());
+        Assert.assertTrue("'Alerts, Frame & Windows' section is not displayed!",
+                driver.findElement(alertsFrameWindows).isDisplayed());
+        Assert.assertTrue("'Widgets' section is not displayed!", driver.findElement(widgets).isDisplayed());
+        Assert.assertTrue("'Interactions' section is not displayed!",
+                driver.findElement(interactions).isDisplayed());
+        Assert.assertTrue("'Book Store Application' section is not displayed!",
+                driver.findElement(bookStoreApplications).isDisplayed());
+    }
+
+    public HomePage click_header() {
+        driver.findElement(header).click();
         return this;
     }
 
-    public ElementsPage click_elements(){
+    public ElementsPage click_elements() {
         driver.findElement(elements);
         return new ElementsPage();
     }
