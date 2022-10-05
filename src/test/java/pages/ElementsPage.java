@@ -31,8 +31,8 @@ public class ElementsPage extends Utilities {
         Assert.assertTrue("'Buttons' section is not displayed!", driver.findElement(buttons).isDisplayed());
     }
 
-    public HomePage click_header() {
+    public void click_header() {
         driver.findElement(header).click();
-        return new HomePage();
+        new HomePage();
     }
 }

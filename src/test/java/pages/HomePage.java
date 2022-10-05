@@ -41,8 +41,8 @@ public class HomePage extends Utilities {
         return this;
     }
 
-    public ElementsPage click_elements() {
+    public void click_elements() {
         driver.findElement(elements);
-        return new ElementsPage();
+        new ElementsPage();
     }
 }
