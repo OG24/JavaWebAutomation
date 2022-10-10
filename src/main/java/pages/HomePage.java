@@ -8,7 +8,7 @@ import utils.WebUtilities;
 
 public class HomePage extends WebUtilities {
 
-    Printer log = new Printer(LandingPage.class);
+    Printer log = new Printer(HomePage.class);
 
     @FindBy(tagName = "header")
     public Header header;
